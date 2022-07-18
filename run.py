@@ -31,7 +31,7 @@ with col2:
     st.image(image2, use_column_width=True)
 
 st.subheader('アップロードファイル読み込んで表示')
-uploaded_file = st.file_uploader('selsect jpg image', type='jpg')
+uploaded_file = st.file_uploader('selsect jpg image', type=['png', 'jpg', 'jpeg'] )
 if uploaded_file is not None:
          img = Image.open(uploaded_file)
          st.image(img, caption='uploaded',use_column_width=True)
