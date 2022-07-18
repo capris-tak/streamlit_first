@@ -10,9 +10,9 @@
 
 
 # In[1]:
-
-
 import streamlit as st
+from PIL import Image
+
 st.title('streamlitでWebアプリを最速で作ってネット公開')
 st.caption('サプーの')
 st.subheader('VTuber サプー')
@@ -31,6 +31,10 @@ video_bytes = video_file.read()
 st.video(video_bytes)
 """
 st.code(code, language='python')
+
+image = Image.open('6450.png')
+st.image(image, caption='サンプル',use_column_width=True)
+
 
 #テキストボックス
 name = st.text_input('名前')
