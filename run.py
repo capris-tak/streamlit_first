@@ -23,7 +23,7 @@ image2 = Image.open('colorize.jpg')
          
 col1, col2 = st.columns(2)
 with col1:
-    st.header("gray")
+    st.header("gray/sepia")
     st.image(image1, use_column_width=True)
 with col2:
     st.header("color")
