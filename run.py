@@ -13,7 +13,7 @@
 import streamlit as st
 from PIL import Image
 
-st.title('ファイル処理や文字表示のテスト')
+st.title('画像処理')
 st.caption('白黒写真をアップロードしてカラー化まで自動化する')
 
 st.subheader('ローカルファイル読み込み')
