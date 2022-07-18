@@ -21,14 +21,14 @@ st.image(image, caption='説明表示',use_column_width=True)
          
 
 uploaded_file = st.file_uploader('selsect jpg image', type='jpg')
-img = Img.open(uploaded_file)
-st.image(img, caption='説明表示',use_column_width=True)
+img = Image.open(uploaded_file)
+st.image(img, caption='uploaded',use_column_width=True)
 
 #処理にバイナリーデータで渡す場合
-import io
-with io.BytesIO() as output:
-         img.save(output, format='JPEG')
-         binary_img=output.getvalue()
+#import io
+#with io.BytesIO() as output:
+#         img.save(output, format='JPEG')
+#         binary_img=output.getvalue()
 
 code = """
 import streamlit as st
