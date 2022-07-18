@@ -13,9 +13,13 @@
 import streamlit as st
 from PIL import Image
 
-st.title('streamlitでWebアプリを最速で作ってネット公開')
-st.caption('サプーの')
-st.subheader('VTuber サプー')
+st.title('ファイル処理や文字表示のテスト')
+st.caption('画像表示')
+st.subheader('ローカルファイル読み込み')
+image = Image.open('6450.jpg')
+st.image(image, caption='説明表示',use_column_width=True)
+         
+         
          
 code = """
 import streamlit as st
@@ -31,9 +35,6 @@ video_bytes = video_file.read()
 st.video(video_bytes)
 """
 st.code(code, language='python')
-
-image = Image.open('6450.jpg')
-st.image(image, caption='サンプル',use_column_width=True)
 
 
 #テキストボックス
