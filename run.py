@@ -16,10 +16,20 @@ from PIL import Image
 st.title('ファイル処理や文字表示のテスト')
 st.caption('画像表示')
 st.subheader('ローカルファイル読み込み')
-image = Image.open('6450.jpg')
-st.image(image, caption='説明表示',use_column_width=True)
+image1 = Image.open('6450.jpg')
+image2 = Image.open('colorize.jpg')
+#st.image(image, caption='説明表示',use_column_width=True)
          
+         
+col1, col2 = st.beta_columns(2)
+with col1:
+    st.header("gray")
+    st.image(image1, use_column_width=True)
+with col2:
+    st.header("color")
+    st.image(image2, use_column_width=True)
 
+         
 uploaded_file = st.file_uploader('selsect jpg image', type='jpg')
 img = Image.open(uploaded_file)
 st.image(img, caption='uploaded',use_column_width=True)
