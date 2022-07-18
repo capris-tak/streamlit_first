@@ -32,7 +32,7 @@ st.video(video_bytes)
 """
 st.code(code, language='python')
 
-image = Image.open('6450.png')
+image = Image.open('6450.jpg')
 st.image(image, caption='サンプル',use_column_width=True)
 
 
