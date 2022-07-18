@@ -30,7 +30,7 @@ with col2:
     st.header("color")
     st.image(image2, use_column_width=True)
 
-st.subheader('アップロードファイル読み込み')
+st.subheader('アップロードファイル読み込んで表示')
 uploaded_file = st.file_uploader('selsect jpg image', type='jpg')
 if uploaded_file is not None:
          img = Image.open(uploaded_file)
