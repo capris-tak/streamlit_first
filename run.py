@@ -21,7 +21,7 @@ image2 = Image.open('colorize.jpg')
 #st.image(image, caption='説明表示',use_column_width=True)
          
          
-col1, col2 = st.beta_columns(2)
+col1, col2 = st.columns(2)
 with col1:
     st.header("gray")
     st.image(image1, use_column_width=True)
@@ -31,8 +31,9 @@ with col2:
 
          
 uploaded_file = st.file_uploader('selsect jpg image', type='jpg')
-img = Image.open(uploaded_file)
-st.image(img, caption='uploaded',use_column_width=True)
+if uploaded_file is not None:
+         img = Image.open(uploaded_file)
+         st.image(img, caption='uploaded',use_column_width=True)
 
 #処理にバイナリーデータで渡す場合
 #import io
