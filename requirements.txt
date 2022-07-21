@@ -1,4 +1,4 @@
 pandas
 plotly
 streamlit
-janome
+janome==0.4.2
