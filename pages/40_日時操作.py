@@ -39,6 +39,21 @@ def convert_to_wareki(y, m, d):
     except ValueError as e:
         raise e
 
+
+
+
+
+_year = st.slider('年は?', 1945, 2050, 2000)
+st.write(str(_year), '年')
+_month = st.slider('月は？', 1, 12, 6)
+st.write(str(_month), '月')
+_day = st.slider('日は？', 1, 31, 15)
+st.write(str(_day), '日')
+
+st.write('和暦で', convert_to_wareki(_year, _month, _day),str(_month),'月',str(_day),'日です')
+
+
+
 ｓt.write('西暦2020年4月1日は、', convert_to_wareki(2020, 4, 1), sep='')
 ｓt.write('西暦2019年5月1日は、', convert_to_wareki(2019, 5, 1), sep='')
 ｓt.write('西暦2019年4月30日は、', convert_to_wareki(2019, 4, 30), sep='')
@@ -47,14 +62,3 @@ def convert_to_wareki(y, m, d):
 ｓt.write('西暦1974年5月5日は、', convert_to_wareki(1974, 5, 5), sep='')
 ｓt.write('西暦1926年12月25日は、', convert_to_wareki(1926, 12, 25), sep='')
 ｓt.write('西暦1926年12月24日は、', convert_to_wareki(1926, 12, 24), sep='')
-
-
-
-_year = st.slider('生まれた年は?', 1945, 2050, 2000)
-st.write(str(_year), '年')
-_month = st.slider('生まれた月は？', 1, 12, 6)
-st.write(str(_month), '月')
-_day = st.slider('生まれた日は？', 1, 31, 15)
-st.write(str(_day), '日')
-
-st.write('和暦で', convert_to_wareki(_year, _month, _day),str(_month),'月',str(_day),'日です')
