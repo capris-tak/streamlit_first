@@ -14,6 +14,13 @@ st.write('苗字surnameの個数:',str(data["苗字"].count()))
 st.write('男性maleの名前の個数:',str(data["名前(男)"].count()))
 st.write('女性femaleの名前の個数:',str(data["名前(女)"].count()))
 
+# 苗字(surname)の個数
+ct_s = data["苗字"].count()
+# 男性(male)の名前の個数
+ct_m = data["名前(男)"].count()
+# 女性(female)の名前の個数
+ct_f = data["名前(女)"].count()
+
 
 import numpy as np
 #男性  乱数シードを設定
