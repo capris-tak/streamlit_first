@@ -50,7 +50,7 @@ _year = st.slider('生まれた年は?', 1900, 2100, 2000)
 st.write(_year, '年')
 _month = st.slider('生まれた月は？', 1, 12, 6)
 st.write(_month, '月')
-_day = st.slider('生まれた日は？', 1, 13, 15)
+_day = st.slider('生まれた日は？', 1, 31, 15)
 st.write(_day, '日')
 
 st.write('誕生日は和暦で', convert_to_wareki(_year, _month, _day),'です')
