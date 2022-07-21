@@ -54,6 +54,6 @@ def name_generator():
     return (name, ph, sex_label)
 
 np.random.seed(0)
-for i in range(200):
+for i in range(20):
     name = name_generator()
     st.write(name)
