@@ -1,13 +1,14 @@
 import streamlit as st
 import pandas as pd
 
+st.subheader('氏名自動生成')
 
 # ファイルのURL
 u = "https://python.atelierkobato.com/wp-content/uploads/2019/08/name_s.csv"
 # ファイルをデータフレームとして読み込む
 data = pd.read_csv(u,  encoding="SHIFT-JIS")
 
-st.write(str(len(data)))
+st.write(str(len(data)),' 個のデータ')
 st.dataframe(data.head(5))
 
 st.write('苗字surnameの個数:',str(data["苗字"].count()))
@@ -56,4 +57,4 @@ def name_generator():
 np.random.seed(0)
 for i in range(20):
     name = name_generator()
-    st.write(name)
+    st.write(str(i),str(name))
