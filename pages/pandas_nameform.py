@@ -9,7 +9,7 @@ u = "https://python.atelierkobato.com/wp-content/uploads/2019/08/name_s.csv"
 data = pd.read_csv(u,  encoding="SHIFT-JIS")
 
 st.write(str(len(data)),' 個のデータ')
-st.dataframe(data.head(5))
+st.dataframe(data)
 
 st.write('苗字surnameの個数:',str(data["苗字"].count()))
 st.write('男性maleの名前の個数:',str(data["名前(男)"].count()))
