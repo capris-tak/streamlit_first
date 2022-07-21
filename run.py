@@ -16,8 +16,7 @@ import pandas as pd
 import numpy as np
 
 st.title('Home')
-st.write("This is a sample home page in the apps.")
-st.markdown(category)
+st.write(category)
 
 category = '''
 1 基本操作 
