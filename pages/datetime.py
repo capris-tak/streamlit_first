@@ -59,7 +59,7 @@ st.write(convert_to_wareki(_year, _month, _day),str(_month),'月',str(_day),'日
 st.write('　')
 
 today_data = datetime.date.today()
-ｓt.write('今日は、',today_data, 'です')
+ｓt.write('今日は、',datetime.date.today(), 'です')
 
 #ｓt.write('西暦2020年4月1日は、', convert_to_wareki(2020, 4, 1), sep='')
 #ｓt.write('西暦2019年5月1日は、', convert_to_wareki(2019, 5, 1), sep='')
