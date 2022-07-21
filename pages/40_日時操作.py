@@ -46,11 +46,11 @@ def convert_to_wareki(y, m, d):
 ｓt.write('西暦1926年12月25日は、', convert_to_wareki(1926, 12, 25), sep='')
 ｓt.write('西暦1926年12月24日は、', convert_to_wareki(1926, 12, 24), sep='')
 
-_year = st.slider('生まれた年は?', 1900, 2100, 2000)
+_year = st.slider('生まれた年は?', 1945, 2050, 2000)
 st.write(_year, '年')
 _month = st.slider('生まれた月は？', 1, 12, 6)
 st.write(_month, '月')
 _day = st.slider('生まれた日は？', 1, 31, 15)
 st.write(_day, '日')
 
-st.write('誕生日は和暦で', convert_to_wareki(_year, _month, _day),'です')
+st.write('和暦で', convert_to_wareki(_year, _month, _day),_month,'月',_day,'日です')
