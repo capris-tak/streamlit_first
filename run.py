@@ -17,9 +17,17 @@ import numpy as np
 
 st.title('Home')
 st.write("This is a sample home page in the apps.")
-st.markdown("### Sample Data")
+st.markdown(category)
+
+category = '''
+1 基本操作 
+2 Streamlit
+3 数学
+4 文字文章操作
+5 画像
+'''
 
 link = '[話題のPyScript！](http://capris.html.xdomain.jp/python/index.html)'
-st.sidebar.markdown(link, unsafe_allow_html=True)
-st.sidebar.write('HTMLファイルにPythonが書けるWebブラウザで動くPython')
+st.markdown(link, unsafe_allow_html=True)
+st.write('HTMLファイルにPythonが書けるWebブラウザで動くPython')
 
