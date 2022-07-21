@@ -6,9 +6,6 @@ from datetime import datetime
 #st.header('西暦⇨和暦　変換')
 st.subheader('西暦⇨和暦　変換')
 
-import datetime
-today_data = datetime.date.today()
-ｓt.write('今日は、', str(today_data.year),'年',str(today_data.month),'月', str(today_data.day),'日です')
 
 
 WAREKI_START = {
@@ -59,7 +56,9 @@ st.write(convert_to_wareki(_year, _month, _day),str(_month),'月',str(_day),'日
 
 st.write('　')
 
-
+import datetime
+today_data = datetime.date.today()
+ｓt.write('今日は、', str(today_data.year),'年',str(today_data.month),'月', str(today_data.day),'日です')
 
 #ｓt.write('西暦2020年4月1日は、', convert_to_wareki(2020, 4, 1), sep='')
 #ｓt.write('西暦2019年5月1日は、', convert_to_wareki(2019, 5, 1), sep='')
