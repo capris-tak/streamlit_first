@@ -1,25 +1,156 @@
 import streamlit as st
 
-st.write('マルコフ連鎖で文章自動生成')
-st.write('https://qiita.com/mapps/items/c0d3f1b73bc9ef398790')
-
-#import Tokenizer
-#import markovify
-file = 'pages/Hermann_Hesse.txt' 
-f = open(file, 'r', encoding="utf-8")
-text = f.read()
-#st.write(text)
-
 from janome.tokenizer import Tokenizer
 import pandas as pd
 #import collections
 #from wordcloud import WordCloud
 
+file = 'pages/Hermann_Hesse.txt' 
+f = open(file, 'r', encoding="utf-8")
+text = f.read()
+
+def text_split(text):
+    # textをmarkovifyで読み取れるように前処理を行う関数です。
+    
+    # 引数：text
+    # 引数の型：str
+    
+    # 戻り値：splitted_text_str
+    # 引数の型：str
+    
+    # 今回は複数の文字列を一回で置換できるようにします。
+    # maketransで置換する文字列の置き換え表を作成して、
+    # str_tableという変数に入れる
+    
+    str_table = str.maketrans({
+        # markovifyで読み取れるよう該当する文字の置換。
+        # https://github.com/jsvine/markovify/issues/84
+        # アンケートデータ内に「。」がついているものとついていないものがあります。
+        # 表記を統一するため一旦、「。」を削除し、
+        # 「'\n'」を「。」で置換する。文末が「。」で終わるように統一します。
+        
+        # 例：句点「。」がついているものと、ついていないものがあります。
+        # 喉 越しが良いから。\n　自分に合っている\n
+        # 。を削除　↓
+        # 喉越しが良いから\n　自分に合っている\n
+        #　\nを。で置換
+        # 喉越しが良いから。　自分に合っている。
+        
+        #文字列の置き換え表　
+        #変換前 : 変換後
+        '。': '',   
+        '\n': '。',
+        '\r': '',
+        '(': '（',
+        ')': '）',
+        '[': '［',
+        ']': '］',
+        '"':'”',
+        "'":"’",
+    })
+    # 文字列をstr_tableの情報を用いて置換します。
+    text = text.translate(str_table)
+    
+    # textを単語分割（文章を形態素で分ける）
+    # wakati=Trueで分かち書き（単語分割）モードにできるのでこれを利用して、
+    # 戻り値、文字列 (str) のリストを返します。
+    # 例：['分かち書き', 'モード', 'が', 'つき', 'まし', 'た', '！']
+    
+    t = Tokenizer()
+    tokens = t.tokenize(text, wakati=True)
+    
+    # splitted_text_listを用意します。
+    splitted_text_list = []
+    # 分かち書きされているtokensを一つずつ処理していき
+    # 「。」や感嘆符でなければ、文字の後にスペース、
+    # 「。」や感嘆符であれば、「'\n'」に置換
+    # splitted_text_listに連結。
+    # リストの要素を連結し、一つの文字列にして返します。
+    for i in tokens:
+        if i != '。' and i != '！' and i != '？':
+            i += ' '
+        elif i == '。' or i == '！' or i == '？':
+            i = '\n'
+        splitted_text_list.append(i)
+        splitted_text_str = "".join(splitted_text_list)
+            
+    return splitted_text_str
+
+import markovify
+splitted_text_str = text_split(text)
+text_model = markovify.NewlineText(splitted_text_str, state_size=3)
+
+for i in range(5):
+    st.write(text_model.make_sentence(tries=1000))
+    st.write("---------------------------------")
+
+
+st.caption("---------------------------------")
+
+
 txt = st.text_area('Text to analyze', '''
-     It was the best of times, it was the worst of times, it was
-     the age of wisdom, it was the age of foolishness, it was
-     the epoch of belief, it was the epoch of incredulity, it
-     was the season of Light, it was the season of Darkness, it
-     was the spring of hope, it was the winter of despair, (...)
-     ''')
-st.write('Sentiment:', run_sentiment_analysis(txt))
+ルンバ ＆ ブラーバで掃除の常識が変わる！？ 自宅モニター座談会-アイロボットファン編-
+2019年はロボット掃除機 ルンバ i7＋、床拭きロボット ブラーバ ジェット ｍ６とアイロボットの最新技術を搭載した新製品が発売。 ルンバ i7＋とブラーバ ジェット ｍ６で床掃除をお任せする生活をご自宅で体感いただきました。
+前回はルンバ i7＋、ブラーバ ジェット ｍ６でどのように床掃除を任せる暮らしを送っているか伺いました。今回は、アイロボットファンならでは＆ルンバロングユーザーならではの視点で「メンテナンス方法」やルンバ・ブラーバを連携できる「Imprint™リンク」のレビューのお話です！
+
+hide10さん
+(Blog:Hinemosu)
+3LDKのバリアフリーマンションでルンバ980をご使用中。ｍ６はモニター後に購入！冬のボーナスの使い道を家族会議し、奥さまがブラーバと即答して決定。好きなことはガジェット全般、テレビゲーム、あと猫。
+
+sayaさん
+(Blog:Digital Life Innovator)
+3LDKマンションで家族3人で生活(2019年12月時点)。ルンバ980をご使用中。ブログはガジェットの紹介がメイン。
+
+TOMAKIさん
+(Blog:日曜アーティストの工房)
+ルンバ980をご使用中。仕事もプライベートもパソコンを使うことが多く、ガジェットも使うので、ルンバとブラーバも好きでファンプログラムにも登録。ｍ６以外にも過去にブラーバをモニター。
+
+のぽりんさん
+(Blog:家電女子.net)
+ご主人と二人暮らしでルンバ980をご使用中。アイロボットファンプログラムでルンバ・ブラーバ合わせて７機種くらいモニター。ルンバと家事分担して、カメラ撮影など好きなことを楽しむ。
+
+TAKAさん
+(Blog:なんでもかくブログ – TAKA@P.P.R.S!!!!!)
+一人暮らしでルンバ980をご使用中。部屋よりも広いルーフバルコニーにご友人を招くことが多く、部屋はキレイにしておきたい。
+ルンバ i7＋のメンテナンスは基本、何もしない
+【日々ルンバ i7＋はどんなお手入れをしましたか？】
+
+たまに裏返して様子を見るくらいでメンテはほぼしませんでした。段ボールの切れ端が付いているときもありましたけど、そういうのはモニター期間３ヵ月で２回あった程度。ほぼ任せっきりでした。
+
+ルンバはたまにクリーンベースに吸い込まないゴミをダスト容器から取り除くくらい。メンテは基本してないです。
+
+ルンバのブラシに髪の毛が絡んでアプリから”助けを求められる”と髪の毛を取り除くお手入れをしました。クリーンベースがゴミを吸い取ってくれるので、普段ルンバを見なかった分、アプリからのエラー通知がメンテナンスのタイミングでした。
+普段のゴミ捨てのようなメンテナンスは必要なくなったようです。
+ルンバの裏側やダスト容器をチェックするのは、長くルンバを使いこなされている方ならではの気遣いで嬉しいです。
+
+ブラーバ ジェット ｍ６のお手入れの分かれ目は給水タイミング
+【ブラーバ ジェット ｍ６はどんなお手入れをしましたか？】
+
+水拭き後にパッドを洗う程度で手間はかかっていない印象。1回の水拭きでタンクの水が無くならないので、毎回の給水は必要ありませんでした。
+
+タンクの水が無くなるとエラーになるし、水の残量や使用量が分からなかったので毎回給水していました。
+のぽりんさんは”アプリで1回の水拭き面積と使った水量の履歴が残って、補給タイミングの目安を教えてもらえるともっと便利になる！”とアプリユーザーならではコメントをいただきました！
+
+ルンバもブラーバも進化は間取りを記憶できたこと
+今まで使ってきたルンバ980やブラーバと比較していかがでしたか？
+
+ルンバのマッピング機能がどんどん進化しているのはいいですね。
+
+ルンバ i7＋はマップを記憶できるようになってから、980と比べて掃除時間がだいぶ短縮されました。ひと部屋ずつ認識しているからですかね。あと、980でもなるべく失敗しないような部屋にしているんですが、失敗率はさらに激減しました。
+
+ブラーバ ジェット m6もマッピングできるので、すごく使い勝手がいいです。前機種と比べて掃除がさらにラクになりました。稼働させながらエラーの原因となるインテリアを移動したり調整して、ルンバ様とブラーバ様が動きやすい空間づくりをし
+他にも気になるコメントをいただきました。
+
+
+980よりも稼働音が小さくなったように感じた！
+
+提案で、クリーンベースが出来たのでダスト容器を小さくして、本体サイズ小さくするのはどうでしょうか！？, (...)
+     ''', height=200)
+st.write('Sentiment:', text_split(txt))
+
+if txt != None:
+    splitted_txt_str = text_split(txt)
+    txt_model = markovify.NewlineText(splitted_txt_str, state_size=3)
+    for i in range(5):
+        st.write(txt_model.make_sentence(tries=1000))
+        st.write("---------------------------------")
