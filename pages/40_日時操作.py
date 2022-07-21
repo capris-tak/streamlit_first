@@ -46,11 +46,13 @@ def convert_to_wareki(y, m, d):
 ｓt.write('西暦1926年12月25日は、', convert_to_wareki(1926, 12, 25), sep='')
 ｓt.write('西暦1926年12月24日は、', convert_to_wareki(1926, 12, 24), sep='')
 
-year = st.slider('How old are you?', 1900, 2100, 2000)
-st.write(year, '年生まれ')
+year = st.slider('生まれた年は?', 1900, 2100, 2000)
+#st.write(year, '年')
+month = st.slider('生まれた月は？', 1, 12, 6)
+#st.write(month, '月')
 
-start_time = st.slider(
-     "When do you start?",
-     value=datetime.date(2000, 1, 1),
-     format="MM/DD/YY")
-st.write("Start time:", start_time)
+d = st.date_input(
+     "When's your birthday",
+     datetime.date(year, month, 15))
+st.write('誕生日は西暦で', d)
+st.write('誕生日は和暦で', convert_to_wareki(d))
