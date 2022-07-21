@@ -23,17 +23,37 @@ ct_f = data["名前(女)"].count()
 
 
 import numpy as np
-#男性  乱数シードを設定
-np.random.seed(10)
-# 乱数を生成
-rd_s = np.random.randint(0, ct_s)
-rd_m = np.random.randint(0, ct_m)
-# 氏名を作成
-name = data.loc[rd_s, "苗字"]\
-       + " " + data.loc[rd_m, "名前(男)"]
-# ふりがな(phonetic)を作成
-ph = data.loc[rd_s, "ふりがな1"]\
-     + " " + data.loc[rd_m, "ふりがな2"]
-# 氏名とふりがなをタプルにまとめる
-name = (name, ph)
-st.write(name)
+def name_generator():    
+    # 苗字(surname)の個数
+    ct_s = data["苗字"].count()    
+    # 男性(male)の名前の個数
+    ct_m = data["名前(男)"].count()
+    # 女性(female)の名前の個数
+    ct_f = data["名前(女)"].count()
+    
+    # 性別をランダムに選択
+    sex = np.random.choice(["f", "m"])    
+    # 乱数を生成("苗字"の行番号)
+    rd_s = np.random.randint(0, ct_s)
+    
+    if sex == "m":
+        k = 2
+        sex_label = "男"
+        rd_n = np.random.randint(0, ct_m)
+    else:
+        k = 4
+        sex_label = "女"
+        rd_n = np.random.randint(0, ct_f)
+
+    # データフレームの配列にアクセス
+    dv = data.values
+    # 氏名とふりがなを作成
+    name = dv[rd_s, 0] + " " + dv[rd_n, k]
+    ph = dv[rd_s, 1] + " " + dv[rd_n, k + 1]
+    # 関数の戻り値
+    return (name, ph, sex_label)
+
+np.random.seed(0)
+for i in range(200):
+    name = name_generator()
+    st.write(name)
