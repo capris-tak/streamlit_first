@@ -6,6 +6,11 @@ from datetime import datetime
 #st.header('西暦⇨和暦　変換')
 st.subheader('西暦⇨和暦　変換')
 
+import datetime
+today_data = datetime.date.today()
+ｓt.write('今日は、', str(today_data.year),'年',str(today_data.month),'月', str(today_data.day),'日です')
+
+
 WAREKI_START = {
    '令和': datetime(2019, 5, 1),
    '平成': datetime(1989, 1, 8),
@@ -40,12 +45,6 @@ def convert_to_wareki(y, m, d):
         return era_str + str(year) + '年'
     except ValueError as e:
         raise e
-
-
-import datetime
-today_data = datetime.date.today()
-ｓt.write('今日は、', str(today_data.year),'年',str(today_data.month),'月', str(today_data.day),'日です')
-
 
 _year = st.slider('年は?', 1945, 2050, 2000)
 #st.sidebar.write(str(_year), '年')
