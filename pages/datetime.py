@@ -56,7 +56,10 @@ _day = st.sidebar.slider('日は？', 1, 31, 15)
 st.write(str(_year), '年',str(_month), '月',str(_day), '日　は、')
 st.write(convert_to_wareki(_year, _month, _day),str(_month),'月',str(_day),'日です')
 
-#st.write('　')
+st.write('　')
+
+today_data = datetime.date.today()
+ｓt.write('今日は、',today_data.year,　'年',today_data.month,'月',today_data.day, '日です')
 
 #ｓt.write('西暦2020年4月1日は、', convert_to_wareki(2020, 4, 1), sep='')
 #ｓt.write('西暦2019年5月1日は、', convert_to_wareki(2019, 5, 1), sep='')
