@@ -44,13 +44,15 @@ def convert_to_wareki(y, m, d):
 
 
 _year = st.sidebar.slider('年は?', 1945, 2050, 2000)
-st.sidebar.write(str(_year), '年')
+#st.sidebar.write(str(_year), '年')
 _month = st.sidebar.slider('月は？', 1, 12, 6)
-st.sidebar.write(str(_month), '月')
+#st.sidebar.write(str(_month), '月')
 _day = st.sidebar.slider('日は？', 1, 31, 15)
-st.sidebar.write(str(_day), '日')
+#st.sidebar.write(str(_day), '日')
 
-st.write('和暦で', convert_to_wareki(_year, _month, _day),str(_month),'月',str(_day),'日です')
+
+st.write(str(_year), '年',str(_month), '月',str(_day), '日　は、')
+st.write(convert_to_wareki(_year, _month, _day),str(_month),'月',str(_day),'日です')
 
 #st.write('　')
 
