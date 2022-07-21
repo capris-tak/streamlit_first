@@ -1,12 +1,9 @@
 import streamlit as st
 
-st.write('''
-マルコフ連鎖で文章自動生成。
-https://www.youtube.com/watch?v=I_2WlQDPQOA
-https://qiita.com/mapps/items/c0d3f1b73bc9ef398790
-''')
+st.write('マルコフ連鎖で文章自動生成')
+st.write('https://qiita.com/mapps/items/c0d3f1b73bc9ef398790')
 
-import Tokenizer
+#import Tokenizer
 import markovify
 file = 'pages/Hermann_Hesse.txt' 
 f = open(file, 'r', encoding="utf-8")
