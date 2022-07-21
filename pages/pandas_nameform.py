@@ -57,4 +57,4 @@ def name_generator():
 np.random.seed(0)
 for i in range(20):
     name = name_generator()
-    st.write(str(i),str(name))
+    st.write(str(i+1),str(name))
