@@ -1,6 +1,5 @@
 pandas
 plotly
 streamlit
-janome=0.4.2
-markovify=0.9.4
-Janome
+janome
+markovify
