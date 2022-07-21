@@ -2,8 +2,8 @@ import streamlit as st
 from datetime import datetime
 
 
-st.title('西暦⇨和暦　変換')
-st.header('西暦⇨和暦　変換')
+#st.title('西暦⇨和暦　変換')
+#st.header('西暦⇨和暦　変換')
 st.subheader('西暦⇨和暦　変換')
 
 WAREKI_START = {
