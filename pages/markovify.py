@@ -9,6 +9,6 @@ file = 'pages/Hermann_Hesse.txt'
 f = open(file, 'r', encoding="utf-8")
 text = f.read()
 
-st.write(text)
+#st.write(text)
 
-#st.write(pages/Hermann_Hesse.txt)
+st.write(pages/Hermann_Hesse.txt)
