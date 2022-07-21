@@ -51,6 +51,6 @@ st.write(year, '年生まれ')
 
 start_time = st.slider(
      "When do you start?",
-     value=date(2000, 1, 1),
+     value=datetime.date(2000, 1, 1),
      format="MM/DD/YY")
 st.write("Start time:", start_time)
