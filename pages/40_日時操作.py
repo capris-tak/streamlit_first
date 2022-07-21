@@ -43,16 +43,16 @@ def convert_to_wareki(y, m, d):
 
 
 
-_year = st.slider('年は?', 1945, 2050, 2000)
-st.write(str(_year), '年')
-_month = st.slider('月は？', 1, 12, 6)
-st.write(str(_month), '月')
-_day = st.slider('日は？', 1, 31, 15)
-st.write(str(_day), '日')
+_year = st.sidebar.slider('年は?', 1945, 2050, 2000)
+st.sidebar.write(str(_year), '年')
+_month = st.sidebar.slider('月は？', 1, 12, 6)
+st.sidebar.write(str(_month), '月')
+_day = st.sidebar.slider('日は？', 1, 31, 15)
+st.sidebar.write(str(_day), '日')
 
 st.write('和暦で', convert_to_wareki(_year, _month, _day),str(_month),'月',str(_day),'日です')
 
-
+st.write('　')
 
 ｓt.write('西暦2020年4月1日は、', convert_to_wareki(2020, 4, 1), sep='')
 ｓt.write('西暦2019年5月1日は、', convert_to_wareki(2019, 5, 1), sep='')
