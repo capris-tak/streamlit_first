@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
+
 
 # ファイルのURL
 u = "https://python.atelierkobato.com/wp-content/uploads/2019/08/name_s.csv"
@@ -14,6 +14,8 @@ st.write('苗字surnameの個数:',str(data["苗字"].count()))
 st.write('男性maleの名前の個数:',str(data["名前(男)"].count()))
 st.write('女性femaleの名前の個数:',str(data["名前(女)"].count()))
 
+
+import numpy as np
 #男性  乱数シードを設定
 np.random.seed(10)
 # 乱数を生成
