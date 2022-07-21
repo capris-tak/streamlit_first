@@ -19,4 +19,7 @@ st.title('Home')
 st.write("This is a sample home page in the apps.")
 st.markdown("### Sample Data")
 
+link = '[話題のPyScript！](http://capris.html.xdomain.jp/python/index.html)'
+st.sidebar.markdown(link, unsafe_allow_html=True)
+st.sidebar.write('HTMLファイルにPythonが書けるWebブラウザで動くPython')
 
