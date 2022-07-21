@@ -1,7 +1,7 @@
 import streamlit as st
 from datetime import datetime
 
-st.title('西暦⇨和暦　変換')
+st.header('西暦⇨和暦　変換')
 
 
 WAREKI_START = {
@@ -52,13 +52,13 @@ st.sidebar.write(str(_day), '日')
 
 st.write('和暦で', convert_to_wareki(_year, _month, _day),str(_month),'月',str(_day),'日です')
 
-st.write('　')
+#st.write('　')
 
-ｓt.write('西暦2020年4月1日は、', convert_to_wareki(2020, 4, 1), sep='')
-ｓt.write('西暦2019年5月1日は、', convert_to_wareki(2019, 5, 1), sep='')
-ｓt.write('西暦2019年4月30日は、', convert_to_wareki(2019, 4, 30), sep='')
-ｓt.write('西暦1989年1月8日は、', convert_to_wareki(1989, 1, 8), sep='')
-ｓt.write('西暦1989年1月7日は、', convert_to_wareki(1989, 1, 7), sep='')
-ｓt.write('西暦1974年5月5日は、', convert_to_wareki(1974, 5, 5), sep='')
-ｓt.write('西暦1926年12月25日は、', convert_to_wareki(1926, 12, 25), sep='')
-ｓt.write('西暦1926年12月24日は、', convert_to_wareki(1926, 12, 24), sep='')
+#ｓt.write('西暦2020年4月1日は、', convert_to_wareki(2020, 4, 1), sep='')
+#ｓt.write('西暦2019年5月1日は、', convert_to_wareki(2019, 5, 1), sep='')
+#ｓt.write('西暦2019年4月30日は、', convert_to_wareki(2019, 4, 30), sep='')
+#ｓt.write('西暦1989年1月8日は、', convert_to_wareki(1989, 1, 8), sep='')
+#ｓt.write('西暦1989年1月7日は、', convert_to_wareki(1989, 1, 7), sep='')
+#ｓt.write('西暦1974年5月5日は、', convert_to_wareki(1974, 5, 5), sep='')
+#ｓt.write('西暦1926年12月25日は、', convert_to_wareki(1926, 12, 25), sep='')
+#ｓt.write('西暦1926年12月24日は、', convert_to_wareki(1926, 12, 24), sep='')
