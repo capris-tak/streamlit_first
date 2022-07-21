@@ -37,11 +37,14 @@ def convert_to_wareki(y, m, d):
     except ValueError as e:
         raise e
 
-print('西暦2020年4月1日は、', convert_to_wareki(2020, 4, 1), sep='')
-print('西暦2019年5月1日は、', convert_to_wareki(2019, 5, 1), sep='')
-print('西暦2019年4月30日は、', convert_to_wareki(2019, 4, 30), sep='')
-print('西暦1989年1月8日は、', convert_to_wareki(1989, 1, 8), sep='')
-print('西暦1989年1月7日は、', convert_to_wareki(1989, 1, 7), sep='')
-print('西暦1974年5月5日は、', convert_to_wareki(1974, 5, 5), sep='')
-print('西暦1926年12月25日は、', convert_to_wareki(1926, 12, 25), sep='')
-print('西暦1926年12月24日は、', convert_to_wareki(1926, 12, 24), sep='')
+ｓt.write('西暦2020年4月1日は、', convert_to_wareki(2020, 4, 1), sep='')
+ｓt.write('西暦2019年5月1日は、', convert_to_wareki(2019, 5, 1), sep='')
+ｓt.write('西暦2019年4月30日は、', convert_to_wareki(2019, 4, 30), sep='')
+ｓt.write'西暦1989年1月8日は、', convert_to_wareki(1989, 1, 8), sep='')
+ｓt.write('西暦1989年1月7日は、', convert_to_wareki(1989, 1, 7), sep='')
+ｓt.write('西暦1974年5月5日は、', convert_to_wareki(1974, 5, 5), sep='')
+ｓt.write('西暦1926年12月25日は、', convert_to_wareki(1926, 12, 25), sep='')
+ｓt.write('西暦1926年12月24日は、', convert_to_wareki(1926, 12, 24), sep='')
+
+age = st.slider('How old are you?', 0, 130, 25)
+st.write("I'm ", age, 'years old')
