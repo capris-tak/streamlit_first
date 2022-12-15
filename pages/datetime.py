@@ -60,12 +60,12 @@ import datetime
 today_data = datetime.date.today()
 ｓt.write('今日は、', str(today_data.year),'年',str(today_data.month),'月', str(today_data.day),'日です')
 
-'''
-ｓt.write('西暦2020年4月1日は、', convert_to_wareki(2020, 4, 1), sep='')
-ｓt.write('西暦2019年5月1日は、', convert_to_wareki(2019, 5, 1), sep='')
-ｓt.write('西暦2019年4月30日は、', convert_to_wareki(2019, 4, 30), sep='')
-ｓt.write('西暦1989年1月8日は、', convert_to_wareki(1989, 1, 8), sep='')
-ｓt.write('西暦1989年1月7日は、', convert_to_wareki(1989, 1, 7), sep='')
-ｓt.write('西暦1974年5月5日は、', convert_to_wareki(1974, 5, 5), sep='')
-ｓt.write('西暦1926年12月25日は、', convert_to_wareki(1926, 12, 25), sep='')
-ｓt.write('西暦1926年12月24日は、', convert_to_wareki(1926, 12, 24), sep='')'''
+
+#ｓt.write('西暦2020年4月1日は、', convert_to_wareki(2020, 4, 1), sep='')
+#ｓt.write('西暦2019年5月1日は、', convert_to_wareki(2019, 5, 1), sep='')
+#ｓt.write('西暦2019年4月30日は、', convert_to_wareki(2019, 4, 30), sep='')
+#ｓt.write('西暦1989年1月8日は、', convert_to_wareki(1989, 1, 8), sep='')
+#ｓt.write('西暦1989年1月7日は、', convert_to_wareki(1989, 1, 7), sep='')
+#ｓt.write('西暦1974年5月5日は、', convert_to_wareki(1974, 5, 5), sep='')
+#ｓt.write('西暦1926年12月25日は、', convert_to_wareki(1926, 12, 25), sep='')
+#ｓt.write('西暦1926年12月24日は、', convert_to_wareki(1926, 12, 24), sep='')
