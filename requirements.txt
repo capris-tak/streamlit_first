@@ -4,3 +4,4 @@ streamlit
 janome
 markovify
 numpy
+sympy
