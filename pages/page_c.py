@@ -12,7 +12,7 @@ print('OSリリース情報 : '+ platform.release())
 print('OSバージョン情報 : '+ platform.version())
 print('OSとバージョン : '+ platform.platform())
 ''')
-st.write('Python Version',platform.python_version())
+st.write(platform.python_version())
 
 
 st.code('''
