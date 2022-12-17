@@ -4,8 +4,7 @@ st.title("Page C")
 st.write("Page C")
 
 
-st.code('
-import platform
+st.code('''import platform
 print(f"Python Version: {platform.python_version()}")
 print(f'VER:{sys.version_info}')
 print('OS : '+ platform.system())
@@ -23,4 +22,4 @@ import pandas as pd
 print(pd.__version__)#Pandasのバージョン確認
 
 
-')
+''')
