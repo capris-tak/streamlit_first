@@ -45,8 +45,8 @@ st.code('(x - 2)**4')
 st.latex((x - 2)**4)
 st.code('expand((x - 2)**4)')
 st.latex(expand((x - 2)**4))
-st.code('factor((x - 2)**4)')
-st.latex(factor((x - 2)**4))
+st.code('factor(x**4 − 8*x**3 + 24*x**2 − 32*x + 16)')
+st.latex(factor(x**4 − 8*x**3 + 24*x**2 − 32*x + 16))
 
 
 
