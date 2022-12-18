@@ -63,6 +63,6 @@ eq = x**2 + 3*x*y + 2*y**2
 st.latex(factor(eq))
 
 
-
-
+st.code('factor(x**3 - 1)')
+st.latex(factor(x**3 - 1))
 
