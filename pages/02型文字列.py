@@ -43,8 +43,8 @@ kkkk = itertools.product(a_z, repeat=4)
 for i in kkkk:
     combi = i[0]+i[1]+i[2]+i[3]
     tttt.append(combi+ '00001')
-st.write('length',len(tttt))
-st.write('tail20'tttt[-20:])
+st.write(len(tttt))
+st.write(tttt[-20:])
 st.write('')
 st.write('')
 
@@ -132,7 +132,7 @@ from collections import defaultdict
 d = defaultdict(int)
 for color in colors:
     d[color] += 1
-d
+print(d)
 ''')
 colors = ['red', 'green', 'red', 'blue', 'green', 'red']
 d = {}
