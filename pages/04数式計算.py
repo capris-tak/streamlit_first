@@ -24,4 +24,4 @@ st.latex(integrate(3*x**2, x))
 
 
 st.code('x**2 + 3*x*y + 2*y**2')
-st.latex( x**2 + 3*x*y + 2*y**2 )
+st.latex(r'''x**2 + 3*x*y + 2*y**2''')
