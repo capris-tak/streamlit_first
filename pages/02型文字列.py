@@ -15,6 +15,7 @@ st.write('hello123'.isalpha())
 st.write('hello123'.isalnum())
 st.write('123'.isdecimal())
 st.write('')
+st.write('')
 
 
 
@@ -39,6 +40,31 @@ mo = phone_num_regex.search('私の電話番号は415-555-4242です。あとは
 st.write('見つかった番号は' + mo.group())
 fao = phone_num_regex.findall('私の電話番号は415-555-4242です。あとは123-456-7890です。')
 st.write('見つかった番号は' + str(fao))
+st.write('')
+st.write('')
+
+
+
+st.subheader("re 正規表現2")
+st.code('''
+import re
+s_text = 'RoboCop eats baby food. BABY FOOD'
+vowel_regex = re.compile(r'[aeiouAEIOU]')
+print(vowel_regex.findall(s_text))
+consonant_regex = re.compile(r'[^aeiouAEIOU]') #キャレット記号：補集合＝以外
+print(consonant_regex.findall(s_text))
+
+## ^〜で始まる  $〜で終わる　.一文字(ワイルドカード、改行以外、含む場合はre.DOTALLを第二引数)
+## 大文字小文字を区別しない　re.I  (=re.IGNORECASE)
+''')
+import re
+s_text = 'RoboCop eats baby food. BABY FOOD'
+vowel_regex = re.compile(r'[aeiouAEIOU]')
+st.write(vowel_regex.findall(s_text))
+consonant_regex = re.compile(r'[^aeiouAEIOU]') #キャレット記号：補集合＝以外
+st.write(consonant_regex.findall(s_text))
+st.write('')
+st.write('')
 
 
 
