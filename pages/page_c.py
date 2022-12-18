@@ -23,14 +23,8 @@ st.write('OSとバージョン : '+ platform.platform())
 st.subheader("sys")
 st.code('''
 import sys
-print('Pythonのバージョン情報 : '+ sys.version)
+print('Python Version : '+ sys.version)
 print(f'VER:{sys.version_info}')
-import numpy as np
-print(np.__version__)#Numpyのバージョン確認
-import pandas as pd
-print(pd.__version__)#Pandasのバージョン確認
 ''')
 st.write('Pythonのバージョン情報 : '+ sys.version)
-st.write(f'VER:{sys.version_info}')
-st.write(numpy.__version__)
-st.write(pandas.__version__)
+st.write(f'VER : {sys.version_info}')
