@@ -41,13 +41,17 @@ st.code('f(sqrt(A)*3)')
 st.latex(f(sqrt(A)*3))
 
 
+st.code('(x - 2)**4')
+st.latex((x - 2)**4)
+st.code('expand((x - 2)**4)')
+st.latex(expand((x - 2)**4))
 
-
-st.code('x**2 + 3*x*y + 2*y**2')
-st.latex(x**2 + 3*x*y + 2*y**2)
 
 
 st.write('factor 関数で因数分解')
+st.code('x**2 + 3*x*y + 2*y**2')
+st.latex(x**2 + 3*x*y + 2*y**2)
+
 st.code('''
 eq = x**2 + 3*x*y + 2*y**2
 factor(eq)
