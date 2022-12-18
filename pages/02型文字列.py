@@ -165,3 +165,38 @@ st.write(d)
 st.write('')
 
     
+    
+    
+    
+    
+    
+    
+    
+st.subheader("ベン図")
+st.code('''
+import random
+list1 = [chr(random.randint(97,122)) for x in range(12)]
+list2 = [chr(random.randint(97,122)) for x in range(12)]
+s1 = set(list1)
+print(sorted(s1))
+s2 = set(list2)
+print(sorted(s2))
+print('和集合：', sorted(s1 | s2) )# .union(s2)
+print('積集合：', sorted(s1.intersection(s2)) )# &が&amp;に変換され記号は失敗
+print('差s1-2集合：', sorted(s1 - s2) )# .difference(s2)
+print('対称差集合：', sorted(s1 ^ s2) )#.symmetric_difference(s2)
+#辞書型からリストに戻す　 list(s1_s2)
+''')
+import random
+list1 = [chr(random.randint(97,122)) for x in range(12)]
+list2 = [chr(random.randint(97,122)) for x in range(12)]
+s1 = set(list1)
+st.write(sorted(s1))
+s2 = set(list2)
+st.write(sorted(s2))
+st.write('和集合：', sorted(s1 | s2) )# .union(s2)
+st.write('積集合：', sorted(s1.intersection(s2)) )# &が&amp;に変換され記号は失敗
+st.write('差s1-2集合：', sorted(s1 - s2) )# .difference(s2)
+st.write('対称差集合：', sorted(s1 ^ s2) )#.symmetric_difference(s2)
+st.write('')
+st.write('')
