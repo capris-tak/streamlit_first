@@ -14,6 +14,7 @@ st.write(r'That is \n \t \\ Carol\'s cat.')
 st.write('hello123'.isalpha())
 st.write('hello123'.isalnum())
 st.write('123'.isdecimal())
+st.write('')
 
 
 
@@ -34,7 +35,7 @@ adr_dict = dict(zip(adr_no,address))
 st.write(adr_dict)
 for ad_key,ad_val in adr_dict.items():
     st.write(ad_key,ad_val)
-
+st.write('')
     
     
 st.subheader("defaultdict")
@@ -62,5 +63,6 @@ d = defaultdict(int)
 for color in colors:
     d[color] += 1
 st.write(d)
+st.write('')
 
     
