@@ -49,9 +49,9 @@ st.subheader("re 正規表現2")
 st.code('''
 import re
 s_text = 'RoboCop eats baby food. BABY FOOD'
-vowel_regex = re.compile(r'[aeiouAEIOU]')
+vowel_regex = re.compile(r'[aeiouAEIOU]') #母音のみ指定
 print(vowel_regex.findall(s_text))
-consonant_regex = re.compile(r'[^aeiouAEIOU]') #キャレット記号：補集合＝以外
+consonant_regex = re.compile(r'[^aeiouAEIOU]') #　^キャレット記号：補集合＝以外
 print(consonant_regex.findall(s_text))
 
 ## ^〜で始まる  $〜で終わる　.一文字(ワイルドカード、改行以外、含む場合はre.DOTALLを第二引数)
