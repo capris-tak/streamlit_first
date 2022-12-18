@@ -198,5 +198,8 @@ st.write('和集合：', sorted(s1 | s2) )# .union(s2)
 st.write('積集合：', sorted(s1.intersection(s2)) )# &が&amp;に変換され記号は失敗
 st.write('差s1-2集合：', sorted(s1 - s2) )# .difference(s2)
 st.write('対称差集合：', sorted(s1 ^ s2) )#.symmetric_difference(s2)
+from PIL import Image
+image = Image.open('venn.png')
+st.image(image, caption='Venn diagram')
 st.write('')
 st.write('')
