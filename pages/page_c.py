@@ -3,7 +3,7 @@ import platform
 
 st.title("Page C")
 
-st.write("platform")
+st.subheader("platform")
 
 st.code('''import platform
 print(f"Python Version: {platform.python_version()}")
@@ -19,7 +19,7 @@ st.write('OSバージョン情報 : '+ platform.version())
 st.write('OSとバージョン : '+ platform.platform())
 
 
-st.write("sys")
+st.subheader("sys")
 st.code('''
 import sys
 print('Pythonのバージョン情報 : '+ sys.version)
