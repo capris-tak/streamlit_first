@@ -20,3 +20,8 @@ st.latex(r'''
 
 st.write('積分∫3𝑥2𝑑𝑥')
 st.latex(integrate(3*x**2, x))
+
+
+
+st.code('x**2 + 3*x*y + 2*y**2')
+st.latex( x**2 + 3*x*y + 2*y**2 )
