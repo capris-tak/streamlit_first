@@ -25,6 +25,10 @@ st.latex(integrate(3*x**2, x))
 st.code('x**2 + 3*x*y + 2*y**2')
 st.latex(x**2 + 3*x*y + 2*y**2)
 
+st.code('Rational(3,21)')
+st.latex(Rational(3,21))
+
+
 
 st.write('factor 関数で因数分解')
 st.code('''
