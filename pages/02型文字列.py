@@ -24,7 +24,8 @@ st.subheader("chr関数を利用してアスキーコードを文字列に変換
 st.code('''
 [chr(x) for x in range(97,123)]  #英小文字
 ''')
-''.join([chr(x) for x in range(97,123)])
+ascstr = ''.join([chr(x) for x in range(97,123)])
+st.write(ascstr)
 st.write('')
 st.write('')
 
