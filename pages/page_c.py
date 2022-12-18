@@ -1,7 +1,8 @@
 import streamlit as st
 import platform
+import sys
 
-st.title("Page C")
+st.title("01 システム")
 
 st.subheader("platform")
 
