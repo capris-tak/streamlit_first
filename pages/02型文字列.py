@@ -18,6 +18,38 @@ st.write('')
 st.write('')
 
 
+st.caption("string.ascii_lowercase")
+st.code('''
+import string
+a_z = string.ascii_lowercase
+print(a_z)
+
+import itertools
+tttt = []
+kkkk = itertools.product(a_z, repeat=4)
+for i in kkkk:
+    combi = i[0]+i[1]+i[2]+i[3]
+    tttt.append(combi+ '00001')
+print(len(tttt))
+print(tttt[-20:])
+''')
+import string
+a_z = string.ascii_lowercase
+st.write(a_z)
+
+import itertools
+tttt = []
+kkkk = itertools.product(a_z, repeat=4)
+for i in kkkk:
+    combi = i[0]+i[1]+i[2]+i[3]
+    tttt.append(combi+ '00001')
+st.write('length',len(tttt))
+st.write('tail20'tttt[-20:])
+st.write('')
+st.write('')
+
+
+
 
 
 st.subheader("re 正規表現")
