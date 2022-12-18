@@ -22,8 +22,6 @@ st.write('積分 ∫3𝑥2𝑑𝑥')
 st.code('integrate(3*x**2, x)')
 st.latex(integrate(3*x**2, x))
 
-st.code('x**2 + 3*x*y + 2*y**2')
-st.latex(x**2 + 3*x*y + 2*y**2)
 
 st.code('100 + Rational(3,21)')
 st.latex(100 + Rational(3,21))
@@ -39,6 +37,14 @@ def f(x):
     return x**2
 st.latex(f(x))
 
+st.code('f(sqrt(A)*3)')
+st.latex(f(sqrt(A)*3))
+
+
+
+
+st.code('x**2 + 3*x*y + 2*y**2')
+st.latex(x**2 + 3*x*y + 2*y**2)
 
 
 st.write('factor 関数で因数分解')
