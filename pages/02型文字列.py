@@ -5,7 +5,7 @@ st.title("02 型文字列")
 
 st.subheader(".isXXX")
 st.code('''
-#print(r'That is \n \t \\ Carol\'s cat.')
+print(r'That is \n \t \\ Carol\'s cat.')
 print('hello123'.isalpha())#英語のみ
 print('hello123'.isalnum())#英語と数字のみ
 print('123'.isdecimal())#数字のみ
@@ -17,4 +17,25 @@ st.write('123'.isdecimal())
 
 
 
+st.subheader("zipでリスト型（list）を辞書型(dictionary)にする")
+st.code('''
+# リスト
+adr_no = ['150-0013','150-0021','150-0022']
+address = ['東京都渋谷区恵比寿','東京都渋谷区恵比寿西','東京都渋谷区恵比寿南']
+# リストを辞書へ統合
+adr_dict = dict(zip(adr_no,address))
+print(adr_dict)
+for ad_key,ad_val in adr_dict.items():
+    print(ad_key,ad_val)
+''')
+adr_no = ['150-0013','150-0021','150-0022']
+address = ['東京都渋谷区恵比寿','東京都渋谷区恵比寿西','東京都渋谷区恵比寿南']
+adr_dict = dict(zip(adr_no,address))
+st.write(adr_dict)
+for ad_key,ad_val in adr_dict.items():
+    st.write(ad_key,ad_val)
 
+    
+    
+    
+    
