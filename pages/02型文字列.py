@@ -18,6 +18,30 @@ st.write('')
 
 
 
+
+st.subheader("re 正規表現")
+st.code('''
+import re
+phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') #　\d\d\d　は　\d{3}　と書ける
+mo = phone_num_regex.search('私の電話番号は415-555-4242です。あとは123-456-7890です。')
+print('見つかった番号は' + mo.group())
+fao = phone_num_regex.findall('私の電話番号は415-555-4242です。あとは123-456-7890です。')
+print('見つかった番号は' + str(fao))
+
+## \d数字 \w単語 \s空白　\D \W \Sはそれら以外
+## (xx)? 0-1回      (xx)* 0〜      (xx)+ 1〜
+## (Ha){3} HaHaHa          (Ha){3,5} HaHaHa  |  HaHaHaHa|  |  HaHaHaHaHa
+## 貪欲greedyマッチ HaHaHaHaHa   非貪欲マッチ HaHaHa  (Ha){3,5}?
+''')
+import re
+phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') #　\d\d\d　は　\d{3}　と書ける
+mo = phone_num_regex.search('私の電話番号は415-555-4242です。あとは123-456-7890です。')
+st.write('見つかった番号は' + mo.group())
+fao = phone_num_regex.findall('私の電話番号は415-555-4242です。あとは123-456-7890です。')
+st.write('見つかった番号は' + str(fao))
+
+
+
 st.subheader("zipでリスト型（list）を辞書型(dictionary)にする")
 st.code('''
 # リスト
