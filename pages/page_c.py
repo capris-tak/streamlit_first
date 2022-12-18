@@ -30,3 +30,7 @@ print(np.__version__)#Numpyのバージョン確認
 import pandas as pd
 print(pd.__version__)#Pandasのバージョン確認
 ''')
+st.write('Pythonのバージョン情報 : '+ sys.version)
+st.write(f'VER:{sys.version_info}')
+st.write(numpy.__version__)
+st.write(pandas.__version__)
