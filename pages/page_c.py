@@ -1,4 +1,5 @@
 import streamlit as st
+import platform
 
 st.title("Page C")
 st.write("Page C")
