@@ -37,5 +37,30 @@ for ad_key,ad_val in adr_dict.items():
 
     
     
-    
+st.subheader("defaultdict")
+st.code('''
+colors = ['red', 'green', 'red', 'blue', 'green', 'red']
+d = {}
+for color in colors:
+    d[color] = d.get(color, 0) + 1
+print(d)
+
+from collections import defaultdict
+d = defaultdict(int)
+for color in colors:
+    d[color] += 1
+d
+''')
+colors = ['red', 'green', 'red', 'blue', 'green', 'red']
+d = {}
+for color in colors:
+    d[color] = d.get(color, 0) + 1
+st.write(d)
+
+from collections import defaultdict
+d = defaultdict(int)
+for color in colors:
+    d[color] += 1
+st.write(d)
+
     
