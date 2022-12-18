@@ -30,6 +30,17 @@ st.latex(100 + Rational(3,21))
 
 
 
+st.write('関数を定義 𝑓(𝑥)=𝑥2')
+st.code('''
+def f(x):
+    return x**2
+f(x)''')
+def f(x):
+    return x**2
+st.latex(f(x))
+
+
+
 st.write('factor 関数で因数分解')
 st.code('''
 eq = x**2 + 3*x*y + 2*y**2
