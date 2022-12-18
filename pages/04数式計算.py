@@ -12,5 +12,5 @@ st.latex(r'''
     a \left(\frac{1-r^{n}}{1-r}\right)
     ''')
 
-#積分∫3𝑥2𝑑𝑥
-st.latex('integrate(3*x**2, x)')
+st.write('積分∫3𝑥2𝑑𝑥')
+st.latex(integrate(3*x**2, x))
