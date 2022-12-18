@@ -5,3 +5,4 @@ janome
 markovify
 numpy
 sympy
+platform
